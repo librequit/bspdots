@@ -1,5 +1,6 @@
-# dotfiles
-comfy dotfiles
+# welcome to my dotfiles
+there will be screenshot
+
 Category        | Value
 ---             | ---
 distro          | [arch](https://archlinux.org/)
@@ -11,7 +12,7 @@ terminal        | [kitty](https://github.com/kovidgoyal/kitty)
 shell           | [bash](https://github.com/gitGNU/gnu_bash)
 editor          | [neovim](https://neovim.io)
 file manager    | [lf](https://github.com/gokcehan/lf)
-music player    | [cmus](https://cmus.github.io)
+music player    | [ncmpcpp](https://github.com/munguua/ncmpcpp-ueberzug)
 launcher        | [rofi](https://github.com/davatorium/rofi)
 web browser     | [librewolf](https://librewolf.net)
 image viewer    | [nsxiv](https://github.com/nsxiv/nsxiv)
