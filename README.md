@@ -19,6 +19,6 @@ media player    | [mpv](https://mpv.io/)
 notifications   | [dunst](https://dunst-project.org/)
 
 # credits and more..  
-- i am using [iosevkatermslab font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTermSlab.zip) and a Custom font called [iosevka mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai).
+- i am using [iosevkatermslab font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTermSlab.zip) and a custom font called [iosevka mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai).
 - [catppuccin](https://github.com/catppuccin/catppuccin) colorscheme which I've used in my rice.
 - [rofi catppuccin](https://github.com/catppuccin/rofi) rofi which I've used in my rice.
