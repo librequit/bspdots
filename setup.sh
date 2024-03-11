@@ -1,13 +1,15 @@
 #!/bin/env bash
-# arch linux bspwm setup script
+#---------------------------------#
+# a r c h  b s p w m  s c r i p t #
+#---------------------------------#
 
-#-----------------
+#---------------#
 red='\033[1;31m'
 rset='\033[0m'
 grn='\033[1;32m'
 ylo='\033[1;33m'
 blue='\033[1;34m'
-#-----------------
+#---------------#
 
 #
 # start
@@ -18,7 +20,7 @@ clear
 read -p "
 hello $USER! this script is only for arch and it 
 will install my dotfiles on your system 
-and may result in losing some existing configs. 
+and may result in losing all your configs. 
 would you like to continue?
 
 (1) yes
@@ -26,23 +28,28 @@ would you like to continue?
 
 (?) select option: " ans_1
 
-if [ $ans -eq 1 ]
-then
-  HELPER="paru"
+if [[ $ans_1 -eq 1 ]]; then
+  sleep 3;
+  clear
+else
+  exit
 fi
 
-if [ $ans -eq 2 ]
-then
-  HELPER="yay"
-fi
+#-------------------------#
+# d e p e n d e n c i e s #
+#-------------------------#
 
 #
-# package
+# system update
 #
 
 sleep 3;
 su -c 'pacman -Syu --noconfirm'
 sleep 3; clear
+
+#
+# yay
+#
 
 if ! command -v yay &> /dev/null; then
     su -c 'pacman -S git --noconfirm --needed'
@@ -54,11 +61,16 @@ else
     echo -e "\n(*) it seems that you already have yay installed, skipping..."
 fi
 
+#
+# drivers
+#
+
 read -p "
 choose the drivers to install:
 
 (1) nvidia
-(*) amd
+(2) amd
+(3) intel
 
 (?) select option: " driv_1
 
@@ -67,23 +79,38 @@ if [[ $driv_1 == "1" ]]; then
   su -c 'pacman -S --noconfirm --needed nvidia-open-dkms nvidia-utils lib32-nvidia-utils \
   nvidia-settings lib32-opencl-nvidia vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia'
   clear
-else
+fi
+
+if [[ $driv_1 == "2" ]]; then
+  sleep 3;
   su -c 'pacman -S --needed --noconfirm lib32-mesa vulkan-radeon \
   lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader'
+  clear
 fi
+
+if [[ $driv_1 == "3" ]]; then
+  sleep 3;
+  su -c 'pacman -S --needed --noconfirm lib32-mesa vulkan-intel lib32-vulkan-intel \
+  vulkan-icd-loader lib32-vulkan-icd-loader'
+  clear
+fi
+
+#
+# wm, progs
+#
 
 clear
 echo -e "$red installing all packages i use... $rset"
 sleep 3;
 yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr xorg-xrdb \
 bspwm sxhkd polybar rofi papirus-icon-theme polkit-gnome feh lxappearance dunst \
-kitty lf neovim ueberzugpp picom-ftlabs-git exa yt-dlp \
-librewolf-bin keepassxc mpv nsxiv wget
+kitty lf neovim ueberzugpp picom-ftlabs-git exa yt-dlp pipewire pipewire-jack pipewire-alsa \
+pipewire-pulse wireplumber librewolf-bin keepassxc mpv nsxiv wget steam lutris
 sleep 3; clear
 
-#
-# copy dotfiles
-#
+#--------------------------#
+# c o p y  d o t f i l e s #
+#--------------------------#
 
 if [ -f ~/.config/polybar ]; then
   echo -e "$ylo polybar cfg detected. deleting it and copying new config... $rset"
@@ -161,12 +188,31 @@ else
   cp -r ./cfg/lf/* ~/.config/lf/;
 fi
 
+if [ -d ~/.config/nsxiv ]; then
+  echo -e "$ylo nsxiv configs detected, deleting it and copying new config... $rset"
+  rm -rf ~/.config/nsviv && mkdir -p ~/.config/nsxiv;
+  cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
+else
+  echo -e "$blue installing nsxiv configs... $rset"
+  mkdir -p ~/.config/nsxiv; 
+  cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
+fi
+
+if [ -d ~/.config/rofi ]; then
+  echo -e "$ylo rofi configs detected, deleting it and copying new config... $rset"
+  rm -rf ~/.config/rofi && mkdir -p ~/.config/rofi;
+  cp -r ./cfg/rofi/* ~/.config/rofi/;
+else
+  echo -e "$blue installing rofi configs... $rset"
+  mkdir -p ~/.config/rofi; 
+  cp -r ./cfg/rofi/* ~/.config/rofi/;
+fi
 
 echo -e "$grn last step... $rset"
 cp -r ./home/* ~/
 
 #
-# End
+# end
 #
 
 read -r -p "
@@ -182,13 +228,9 @@ would you like to reboot?
 (?) select option: " rbt
 
 if [[ $rbt -eq 1 ]]; then
-	sleep 3; clear
-	if command -v systemctl >/dev/null; then
-		systemctl reboot
-	else
-		su -c 'loginctl reboot'
-	fi
+  sleep 3; clear
+  systemctl reboot
 else
-	echo -e "\nskipping..."
-	sleep 3; clear
+  echo -e "\nskipping..."
+  sleep 3; clear
 fi
