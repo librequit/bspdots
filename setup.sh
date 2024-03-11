@@ -172,20 +172,24 @@ if [ -d ~/.config/bspwm ]; then
   echo -e "$ylo bspwm configs detected, deleting it and copying new config... $rset"
   rm -rf ~/.config/bspwm && mkdir -p ~/.config/bspwm;
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
+  chmod +x ~/.config/bspwm/bspwmrc;
 else
   echo -e "$blue installing bspwm configs... $rset"
   mkdir -p ~/.config/bspwm 
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
+  chmod +x ~/.config/bspwm/bspwmrc;
 fi
 
 if [ -d ~/.config/lf ]; then
   echo -e "$ylo lf configs detected, deleting it and copying new config... $rset"
   rm -rf ~/.config/lf && mkdir -p ~/.config/lf;
   cp -r ./cfg/lf/* ~/.config/lf/;
+  chmod +x ~/.config/{cleaner,scope};
 else
   echo -e "$blue installing lf configs... $rset"
   mkdir -p ~/.config/lf; 
   cp -r ./cfg/lf/* ~/.config/lf/;
+  chmod +x ~/.config/{cleaner,scope};
 fi
 
 if [ -d ~/.config/nsxiv ]; then
@@ -206,6 +210,16 @@ else
   echo -e "$blue installing rofi configs... $rset"
   mkdir -p ~/.config/rofi; 
   cp -r ./cfg/rofi/* ~/.config/rofi/;
+fi
+
+if [ -d ~/.config/yt-dlp ]; then
+  echo -e "$ylo yt-dlp configs detected, deleting it and copying new config... $rset"
+  rm -rf ~/.config/yt-dlp && mkdir -p ~/.config/yt-dlp;
+  cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
+else
+  echo -e "$blue installing yt-dlp configs... $rset"
+  mkdir -p ~/.config/yt-dlp; 
+  cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
 fi
 
 echo -e "$grn last step... $rset"
