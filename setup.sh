@@ -16,7 +16,8 @@ blue='\033[1;34m'
 clear
 
 read -p "
-hello $USER! this script will install my dotfiles on your system 
+hello $USER! this script is only for arch and it 
+will install my dotfiles on your system 
 and may result in losing some existing configs. 
 would you like to continue?
 
@@ -25,11 +26,14 @@ would you like to continue?
 
 (?) select option: " ans_1
 
-if [[ $ans_1 == "1" ]]; then
-  sleep 3;
-  clear
-else
-  exit
+if [ $ans -eq 1 ]
+then
+  HELPER="paru"
+fi
+
+if [ $ans -eq 2 ]
+then
+  HELPER="yay"
 fi
 
 #
@@ -50,17 +54,32 @@ else
     echo -e "\n(*) it seems that you already have yay installed, skipping..."
 fi
 
+read -p "
+choose the drivers to install:
+
+(1) nvidia
+(*) amd
+
+(?) select option: " driv_1
+
+if [[ $driv_1 == "1" ]]; then
+  sleep 3;
+  su -c 'pacman -S --noconfirm --needed nvidia-open-dkms nvidia-utils lib32-nvidia-utils \
+  nvidia-settings lib32-opencl-nvidia vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia'
+  clear
+else
+  su -c 'pacman -S --needed --noconfirm lib32-mesa vulkan-radeon \
+  lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader'
+fi
+
 clear
 echo -e "$red installing all packages i use... $rset"
 sleep 3;
-yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr \
+yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr xorg-xrdb \
 bspwm sxhkd polybar rofi papirus-icon-theme polkit-gnome feh lxappearance dunst \
 kitty lf neovim ueberzugpp picom-ftlabs-git exa yt-dlp \
-librewolf-bin keepassxc mpv
+librewolf-bin keepassxc mpv nsxiv wget
 sleep 3; clear
-
-# test if command is available, install if not
-mkdir -p ~/.local/src
 
 #
 # copy dotfiles
