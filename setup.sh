@@ -239,6 +239,7 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 echo -e "$grn last step... $rset"
 cp -r ./home/* ~/
+chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 
 #
 # end
