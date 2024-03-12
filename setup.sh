@@ -105,7 +105,7 @@ sleep 3;
 yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr xorg-xrdb \
 bspwm sxhkd polybar rofi papirus-icon-theme polkit-gnome feh lxappearance dunst \
 kitty lf neovim ueberzugpp picom-ftlabs-git exa yt-dlp pipewire pipewire-jack pipewire-alsa \
-pipewire-pulse wireplumber librewolf-bin keepassxc mpv nsxiv wget steam lutris
+pipewire-pulse wireplumber librewolf-bin keepassxc mpv nsxiv wget steam lutris catppuccin-gtk-theme-mocha
 sleep 3; clear
 
 #--------------------------#
