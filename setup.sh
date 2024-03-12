@@ -226,10 +226,12 @@ if [ -d ~/.local/bin ]; then
   echo -e "$ylo bins detected, deleting and copying new bins... $rset"
   rm -rf ~/.local/bin && mkdir -p ~/.local/bin;
   cp -r ./bin/* ~/.local/bin/;
+  chmod +x ~/.local/bin/*;
 else
   echo -e "$blue installing my bins... $rset"
   mkdir -p ~/.local/bin; 
   cp -r ./bin/* ~/.local/bin/;
+  chmod +x ~/.local/bin/*;
 fi
 
 echo -e "$blue installing astronvim... $rset"
