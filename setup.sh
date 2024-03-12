@@ -222,6 +222,9 @@ else
   cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
 fi
 
+echo -e "$blue installing astronvim... $rset"
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
 echo -e "$grn last step... $rset"
 cp -r ./home/* ~/
 
