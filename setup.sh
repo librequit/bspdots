@@ -148,7 +148,7 @@ else
   cp -r ./cfg/kitty/* ~/.config/kitty/;
 fi
 
-if [ -d ~/wallpapers ]; then
+if [ -d ~/walls ]; then
   echo -e "$ylo adding wallpapers to ~/walls... $rset"
   rm -rf ~/walls && mkdir ~/walls;
   cp -r./misc/walls/* ~/walls/;
@@ -222,6 +222,16 @@ else
   cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
 fi
 
+if [ -d ~/.local/bin ]; then
+  echo -e "$ylo bins detected, deleting and copying new bins... $rset"
+  rm -rf ~/.local/bin && mkdir -p ~/.local/bin;
+  cp -r ./bin/* ~/.local/bin/;
+else
+  echo -e "$blue installing my bins... $rset"
+  mkdir -p ~/.local/bin; 
+  cp -r ./bin/* ~/.local/bin/;
+fi
+
 echo -e "$blue installing astronvim... $rset"
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
@@ -235,7 +245,7 @@ cp -r ./home/* ~/
 read -r -p "
 installation complete, thank you for using my dotfiles!
 
-this script was made by xrwv.
+this script was made by xrwv (xeerowave).
 
 would you like to reboot?
 
