@@ -1,7 +1,7 @@
 # welcome to my dotfiles
 there will be screenshot
 
-Category        | Value
+category        | value
 ---             | ---
 distro          | [arch](https://archlinux.org/)
 wallpaper       | [here](misc/walls)
