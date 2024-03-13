@@ -1,0 +1,81 @@
+# vim:ft=sh
+set cursorpreviewfmt ""
+set icons true
+set ifs "\n"
+set ratios 1:1
+set scrolloff 4
+set shellopts '-eu'
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+
+cmd bulk-rename $renamer ${fx}
+cmd chmod %chmod $* ${fx} && lf -remote "send reload"
+cmd extract !clear; aunpack -- ${fx}
+cmd execute !"${f}"
+cmd mkdir %IFS=" "; mkdir -vp "$*"
+cmd open-terminal-here &setsid -f "${TERMINAL}" >/dev/null 2>&1
+cmd open-with &setsid -f ${1} ${fx}
+cmd set-as-wallpaper &setbg ${f}
+
+cmd open ${{
+    case "${f##*.}" in
+        cbr|cbz)
+            setsid -f zathura "$f" >/dev/null 2>&1 && exit ;;
+    esac
+
+    case $(file --dereference --brief --mime-type -- "$f") in
+        text/*|application/json|inode/x-empty|application/pgp-encrypted)
+            ${EDITOR} $fx ;;
+        *)
+            setsid -f xdg-open "$fx" >/dev/null 2>&1 ;;
+    esac
+}}
+
+cmd move-to-trash &{{
+    if trash-put ${fx}; then
+        lf -remote "send load"
+        lf -remote "send ${id} echo 'File(s) sent to trash'"
+    else
+        lf -remote "send ${id} echo 'Deletion failed'"
+    fi
+}}
+
+cmd yank &{{
+    case ${1} in
+        dir)  dirname "${f}" ;;
+        name) basename "${f}" ;;
+        path) printf "%s" "${f}" ;;
+    esac | xclip -rmlastnl -selection clipboard
+}}
+
+map d
+map dd cut
+map dD move-to-trash
+map y
+map yy copy
+map yp yank path
+map y0 yank dir
+map yw yank name
+map p
+map pp paste
+map gm cd /media
+map o  push :open-with<space>
+
+map xw set-as-wallpaper
+map xe extract
+map xr bulk-rename
+map xt open-terminal-here
+map xx execute
+
+map c
+map a  rename
+map A  push a<c-e>
+map I  push a<c-a>
+map cc push a<c-e><c-u>
+map cm push :chmod<space>
+map cw push a<c-u>
+
+map <c-l>   push :cd<space>
+map <c-n>   push :mkdir<space>
+map <esc>   :unselect; clear
+map <enter> open

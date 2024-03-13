@@ -1,0 +1,7 @@
+--paths "~/Downloads"
+--restrict-filenames
+--trim-filenames 200
+--format 'best[height>=?360][height<=?720]/best'
+--sub-langs "en.*,es.*"
+--embed-subs
+--embed-metadata
