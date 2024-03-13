@@ -20,7 +20,7 @@ clear
 read -p "
 hello $USER! this script is only for arch and it 
 will install my dotfiles on your system 
-and may result in losing all your configs. 
+and will result in losing all your configs. 
 would you like to continue?
 
 (1) yes
