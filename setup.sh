@@ -196,10 +196,12 @@ if [ -d ~/.config/nsxiv ]; then
   echo -e "$ylo nsxiv configs detected, deleting it and copying new config... $rset"
   rm -rf ~/.config/nsviv && mkdir -p ~/.config/nsxiv;
   cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
+  chmod +x ~/.config/nsxiv/exec/*;
 else
   echo -e "$blue installing nsxiv configs... $rset"
   mkdir -p ~/.config/nsxiv; 
   cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
+  chmod +x ~/.config/nsxiv/exec/*;
 fi
 
 if [ -d ~/.config/rofi ]; then
