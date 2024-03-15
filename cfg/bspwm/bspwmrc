@@ -20,8 +20,9 @@ bspc rule -a nemo state=floating
 xsetroot -cursor_name left_ptr &
 
 # autostart
-xrdb .Xresources
+xrdb merge .Xresources
 picom -b
+setxkbmap -option grp:alt_shift_toggle us,ru
 feh --bg-fill --no-fehbg ~/walls/wall.jpg
 $HOME/.config/polybar/launch.sh
 dunst &
