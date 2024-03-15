@@ -90,8 +90,8 @@ fi
 
 if [[ $driv_1 == "3" ]]; then
   sleep 3;
-  su -c 'pacman -S --needed --noconfirm lib32-mesa vulkan-intel lib32-vulkan-intel \
-  vulkan-icd-loader lib32-vulkan-icd-loader'
+  su -c 'pacman -S --needed --noconfirm lib32-mesa vulkan-intel \
+  lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader'
   clear
 fi
 
