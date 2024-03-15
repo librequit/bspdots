@@ -1,5 +1,6 @@
 # welcome to my dotfiles
 <img align="right" src="./assets/rice.png" width="300px">
+
 category        | value
 ---             | ---
 distro          | [arch](https://archlinux.org/)
