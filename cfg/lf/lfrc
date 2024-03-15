@@ -15,7 +15,7 @@ cmd execute !"${f}"
 cmd mkdir %IFS=" "; mkdir -vp "$*"
 cmd open-terminal-here &setsid -f "${TERMINAL}" >/dev/null 2>&1
 cmd open-with &setsid -f ${1} ${fx}
-cmd set-as-wallpaper &setbg ${f}
+cmd set-as-wallpaper &cp ${f} ~/walls/wall.jpg && feh --bg-fill --no-fehbg ${f}
 
 cmd open ${{
     case "${f##*.}" in
