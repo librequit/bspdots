@@ -106,7 +106,7 @@ yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr xorg-xrdb \
 bspwm sxhkd polybar rofi papirus-icon-theme polkit-gnome feh lxappearance dunst \
 kitty lf neovim ueberzugpp picom-git exa yt-dlp pipewire pipewire-jack pipewire-alsa \
 pipewire-pulse wireplumber ungoogled-chromium-bin keepassxc mpv nsxiv wget steam lutris \
-catppuccin-gtk-theme-mocha
+catppuccin-gtk-theme-mocha vesktop-bin telegram-desktop flameshot pavucontrol ncmpcpp mpd
 sleep 3; clear
 
 #--------------------------#
