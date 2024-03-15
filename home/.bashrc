@@ -29,7 +29,7 @@ alias \
     pi="yay -S" \
     pr="doas pacman -Rsn" \
     pu="yay -Syyyu --devel" \
-    pq="doas pacman -Ss"
+    pq="yay -Ss"
 
 # verbosity and settings
 alias \
