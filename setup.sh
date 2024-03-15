@@ -184,12 +184,12 @@ if [ -d ~/.config/lf ]; then
   echo -e "$ylo lf configs detected, deleting it and copying new config... $rset"
   rm -rf ~/.config/lf && mkdir -p ~/.config/lf;
   cp -r ./cfg/lf/* ~/.config/lf/;
-  chmod +x ~/.config/{cleaner,scope};
+  chmod +x ~/.config/lf/{cleaner,scope};
 else
   echo -e "$blue installing lf configs... $rset"
   mkdir -p ~/.config/lf; 
   cp -r ./cfg/lf/* ~/.config/lf/;
-  chmod +x ~/.config/{cleaner,scope};
+  chmod +x ~/.config/lf/{cleaner,scope};
 fi
 
 if [ -d ~/.config/nsxiv ]; then
@@ -240,7 +240,7 @@ echo -e "$blue installing astronvim... $rset"
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 echo -e "$grn last step... $rset"
-cp -r ./home/* ~/
+cp -r ./home/.* ~/
 chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 
 #
