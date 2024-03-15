@@ -1,5 +1,5 @@
 # welcome to my dotfiles
-there will be screenshot
+![rice](./assets/rice.png)
 
 category        | value
 ---             | ---
