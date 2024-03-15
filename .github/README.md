@@ -3,7 +3,7 @@
 
 category        | value
 ---             | ---
-distro          | [arch](https://archlinux.org/)
+distro          | [artix](https://artixlinux.org/)
 wallpaper       | [here](../misc/walls)
 colorscheme     | [catppuccin](https://github.com/catppuccin/catppuccin)
 fonts           | [iosevkatermslab](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTermSlab.zip), [iosevka mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai)
