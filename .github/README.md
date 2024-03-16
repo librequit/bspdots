@@ -1,5 +1,5 @@
 # Welcome to my dotfiles
-<img align="right" src="./assets/rice.png" width="415px">
+<img align="right" src="./assets/rice.png" width="400px">
 
 category        | value
 ---             | ---
