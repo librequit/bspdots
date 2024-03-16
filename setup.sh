@@ -1,6 +1,6 @@
 #!/bin/env bash
 #-----------------------------------#
-# a r t i x  b s p w m  s c r i p t #
+# A r t i x  b s p w m  s c r i p t #
 #-----------------------------------#
 
 #---------------#
@@ -18,17 +18,17 @@ blue='\033[1;34m'
 clear
 
 read -p "
-hello $USER! this script is only for arch and it 
+Hello $USER! This script is only for arch and it 
 will install my dotfiles on your system 
 and will result in losing all your configs. 
-would you like to continue?
+Would you like to continue?
 
-P.S. don't forget to add arch and lib32 repos to download packages
+P.S. Don't forget to add Arch and lib32 repos to download packages
 
 (1) yes
 (*) no
 
-(?) select option: " ans_1
+(?) Select option: " ans_1
 
 if [[ $ans_1 -eq 1 ]]; then
   sleep 3;
@@ -38,7 +38,7 @@ else
 fi
 
 #-------------------------#
-# d e p e n d e n c i e s #
+# D e p e n d e n c i e s #
 #-------------------------#
 
 #
@@ -60,7 +60,7 @@ if ! command -v yay &> /dev/null; then
     makepkg -sric --noconfirm --needed PKGBUILD
     popd
 else
-    echo -e "\n(*) it seems that you already have yay installed, skipping..."
+    echo -e "\n(*) It seems that you already have yay installed, skipping..."
 fi
 
 #
@@ -68,11 +68,11 @@ fi
 #
 
 read -p "
-choose the drivers to install:
+Choose the drivers to install:
 
-(1) nvidia
-(2) amd
-(3) intel
+(1) NVIDIA
+(2) AMD
+(3) Intel
 
 (?) select option: " driv_1
 
@@ -102,7 +102,7 @@ fi
 #
 
 clear
-echo -e "$red installing all packages i use... $rset"
+echo -e "$red Installing all packages, progs I use... $rset"
 sleep 3;
 yay -S --needed base-devel xorg xorg-xinit xorg-xprop xorg-xrandr xorg-xrdb \
 bspwm sxhkd polybar rofi papirus-icon-theme polkit-gnome feh lxappearance dunst \
@@ -116,16 +116,16 @@ sleep 3; clear
 #--------------------------#
 
 if [ -f ~/.config/polybar ]; then
-  echo -e "$ylo polybar cfg detected. deleting it and copying new config... $rset"
+  echo -e "$ylo Polybar config detected. Deleting it and copying new config... $rset"
   rm -rf ~/.config/polybar && mkdir -p ~/.config/polybar;
   cp ./cfg/polybar/* ~/.config/polybar/;
 else
-  echo -e "$blue copying polybar config file... $rset"
+  echo -e "$blue Copying polybar config file... $rset"
   mkdir -p ~/.config/polybar;
   cp ./cfg/polybar/* ~/.config/polybar/;
 fi
 
-echo -e "$blue copying fonts... $rset"
+echo -e "$blue Copying fonts... $rset"
 mkdir -p ~/.local/share/fonts
 cp -r ./misc/fonts/* ~/.local/share/fonts/
 fc-cache -f
@@ -137,7 +137,7 @@ if [ -f ~/.config/picom.conf ]; then
   rm -rf ~/.config/picom.conf;
   cp ./cfg/picom.conf ~/.config/picom.conf;
 else
-  echo -e "$blue installing picom configs... $rset"
+  echo -e "$blue Installing picom configs... $rset"
   cp ./cfg/picom.conf ~/.config/picom.conf;
 fi
 
@@ -146,17 +146,17 @@ if [ -d ~/.config/kitty ]; then
   rm -rf ~/.config/kitty && mkdir -p ~/.config/kitty
   cp -r ./cfg/kitty/* ~/.config/kitty/;
 else
-  echo -e "$blue installing kitty configs... $rset"
+  echo -e "$blue Installing kitty configs... $rset"
   mkdir -p ~/.config/kitty;
   cp -r ./cfg/kitty/* ~/.config/kitty/;
 fi
 
 if [ -d ~/walls ]; then
-  echo -e "$ylo adding wallpapers to ~/walls... $rset"
+  echo -e "$ylo Adding wallpapers to ~/walls... $rset"
   rm -rf ~/walls && mkdir ~/walls;
   cp -r ./misc/walls/* ~/walls/;
 else
-  echo -e "$blue installing wallpapers... $rset"
+  echo -e "$blue Installing wallpapers... $rset"
   mkdir ~/walls;
   cp -r ./misc/walls/* ~/walls/;
 fi
@@ -166,9 +166,19 @@ if [ -d ~/.config/dunst ]; then
   rm -rf ~/.config/dunst && mkdir -p ~/.config/dunst;
   cp -r ./cfg/dunst/dunstrc ~/.config/dunst/dunstrc;
 else
-  echo -e "$blue installing dunst configs... $rset"
+  echo -e "$blue Installing dunst configs... $rset"
   mkdir -p ~/.config/dunst;
   cp -r ./cfg/dunst/dunstrc ~/.config/dunst/dunstrc;
+fi
+
+if [ -d ~/.config/sxhkd ]; then
+  echo -e "$ylo sxhkd configs detected, deleting it and copying new config... $rset"
+  rm -rf ~/.config/sxhkd && mkdir -p ~/.config/sxhkd;
+  cp -r ./cfg/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc;
+else
+  echo -e "$blue Installing sxhkd configs... $rset"
+  mkdir -p ~/.config/sxhkd;
+  cp -r ./cfg/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc;
 fi
 
 if [ -d ~/.config/bspwm ]; then
@@ -177,7 +187,7 @@ if [ -d ~/.config/bspwm ]; then
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
   chmod +x ~/.config/bspwm/bspwmrc;
 else
-  echo -e "$blue installing bspwm configs... $rset"
+  echo -e "$blue Installing bspwm configs... $rset"
   mkdir -p ~/.config/bspwm 
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
   chmod +x ~/.config/bspwm/bspwmrc;
@@ -189,7 +199,7 @@ if [ -d ~/.config/lf ]; then
   cp -r ./cfg/lf/* ~/.config/lf/;
   chmod +x ~/.config/lf/{cleaner,scope};
 else
-  echo -e "$blue installing lf configs... $rset"
+  echo -e "$blue Installing lf configs... $rset"
   mkdir -p ~/.config/lf; 
   cp -r ./cfg/lf/* ~/.config/lf/;
   chmod +x ~/.config/lf/{cleaner,scope};
@@ -197,22 +207,22 @@ fi
 
 if [ -d ~/.config/nsxiv ]; then
   echo -e "$ylo nsxiv configs detected, deleting it and copying new config... $rset"
-  rm -rf ~/.config/nsviv && mkdir -p ~/.config/nsxiv;
+  rm -rf ~/.config/nsxiv && mkdir -p ~/.config/nsxiv;
   cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
   chmod +x ~/.config/nsxiv/exec/*;
 else
-  echo -e "$blue installing nsxiv configs... $rset"
+  echo -e "$blue Installing nsxiv configs... $rset"
   mkdir -p ~/.config/nsxiv; 
   cp -r ./cfg/nsxiv/* ~/.config/nsxiv/;
   chmod +x ~/.config/nsxiv/exec/*;
 fi
 
 if [ -d ~/.config/rofi ]; then
-  echo -e "$ylo rofi configs detected, deleting it and copying new config... $rset"
+  echo -e "$ylo Rofi configs detected, deleting it and copying new config... $rset"
   rm -rf ~/.config/rofi && mkdir -p ~/.config/rofi;
   cp -r ./cfg/rofi/* ~/.config/rofi/;
 else
-  echo -e "$blue installing rofi configs... $rset"
+  echo -e "$blue Installing rofi configs... $rset"
   mkdir -p ~/.config/rofi; 
   cp -r ./cfg/rofi/* ~/.config/rofi/;
 fi
@@ -222,27 +232,27 @@ if [ -d ~/.config/yt-dlp ]; then
   rm -rf ~/.config/yt-dlp && mkdir -p ~/.config/yt-dlp;
   cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
 else
-  echo -e "$blue installing yt-dlp configs... $rset"
+  echo -e "$blue Installing yt-dlp configs... $rset"
   mkdir -p ~/.config/yt-dlp; 
   cp -r ./cfg/yt-dlp/* ~/.config/yt-dlp/;
 fi
 
 if [ -d ~/.local/bin ]; then
-  echo -e "$ylo bins detected, deleting and copying new bins... $rset"
+  echo -e "$ylo Binaries detected, deleting and copying new bins... $rset"
   rm -rf ~/.local/bin && mkdir -p ~/.local/bin;
   cp -r ./bin/* ~/.local/bin/;
   chmod +x ~/.local/bin/*;
 else
-  echo -e "$blue installing my bins... $rset"
+  echo -e "$blue Installing my binaries... $rset"
   mkdir -p ~/.local/bin; 
   cp -r ./bin/* ~/.local/bin/;
   chmod +x ~/.local/bin/*;
 fi
 
-echo -e "$blue installing astronvim... $rset"
+echo -e "$blue Installing astronvim... $rset"
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
-echo -e "$grn last step... $rset"
+echo -e "$grn Last step... $rset"
 cp -r ./home/.* ~/
 chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 
@@ -251,21 +261,21 @@ chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 #
 
 read -r -p "
-installation complete, thank you for using my dotfiles!
+Installation complete, thank you for using my dotfiles!
 
-this script was made by xrwv (xeerowave).
+This script was made by xrwv (xeerowave).
 
-would you like to reboot?
+Would you like to reboot?
 
 (1) yes
 (*) no
 
-(?) select option: " rbt
+(?) Select option: " rbt
 
 if [[ $rbt -eq 1 ]]; then
   sleep 3; clear
   su -c 'loginctl reboot'
 else
-  echo -e "\nskipping..."
+  echo -e "\nSkipping..."
   sleep 3; clear
 fi
