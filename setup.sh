@@ -23,6 +23,8 @@ will install my dotfiles on your system
 and will result in losing all your configs. 
 would you like to continue?
 
+P.S. don't forget to add arch and lib32 repos to download packages
+
 (1) yes
 (*) no
 
@@ -142,7 +144,7 @@ fi
 if [ -d ~/.config/kitty ]; then
   echo -e "$ylo kitty configs detected, deleting it and copying new config...$rset"
   rm -rf ~/.config/kitty && mkdir -p ~/.config/kitty
-  cp -r ./cfg/kitty/* ~/.config/kitty/*;
+  cp -r ./cfg/kitty/* ~/.config/kitty/;
 else
   echo -e "$blue installing kitty configs... $rset"
   mkdir -p ~/.config/kitty;
@@ -152,7 +154,7 @@ fi
 if [ -d ~/walls ]; then
   echo -e "$ylo adding wallpapers to ~/walls... $rset"
   rm -rf ~/walls && mkdir ~/walls;
-  cp -r./misc/walls/* ~/walls/;
+  cp -r ./misc/walls/* ~/walls/;
 else
   echo -e "$blue installing wallpapers... $rset"
   mkdir ~/walls;
