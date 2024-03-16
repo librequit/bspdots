@@ -1,7 +1,7 @@
 #!/bin/env bash
-#---------------------------------#
-# a r c h  b s p w m  s c r i p t #
-#---------------------------------#
+#-----------------------------------#
+# a r t i x  b s p w m  s c r i p t #
+#-----------------------------------#
 
 #---------------#
 red='\033[1;31m'
@@ -262,7 +262,7 @@ would you like to reboot?
 
 if [[ $rbt -eq 1 ]]; then
   sleep 3; clear
-  systemctl reboot
+  su -c 'loginctl reboot'
 else
   echo -e "\nskipping..."
   sleep 3; clear
