@@ -263,7 +263,7 @@ chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 read -r -p "
 Installation complete, thank you for using my dotfiles!
 
-This script was made by LibreQuit.
+This script was made by Dispercial.
 
 Would you like to reboot?
 
