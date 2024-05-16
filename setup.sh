@@ -18,8 +18,8 @@ blue='\033[1;34m'
 clear
 
 read -p "
-Hello $USER! This script is only for arch and it 
-will install my dotfiles on your system 
+Hello $USER! This script is only for Artix and it 
+will install my dotfiles on your system
 and will result in losing all your configs. 
 Would you like to continue?
 
@@ -263,7 +263,7 @@ chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
 read -r -p "
 Installation complete, thank you for using my dotfiles!
 
-This script was made by Dispercial.
+This script was made by LibreQuit.
 
 Would you like to reboot?
 
