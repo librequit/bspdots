@@ -1,4 +1,4 @@
-# Welcome to my dotfiles
+<h1 align="center">Welcome to my DotFiles.</h1>
 ## Installation
 ```
 git clone https://github.com/librequit/bspdots.git
