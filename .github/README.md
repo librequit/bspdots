@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to my DotFiles.</h1>
+<h1 align="center">Welcome to my Dotfiles.</h1>
 
 ## Installation
 ```
