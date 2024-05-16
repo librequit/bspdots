@@ -1,7 +1,13 @@
 # Welcome to my dotfiles
-<img align="right" src="./assets/rice.png" width="400px">
-
 # Installation
+```
+git clone https://github.com/librequit/bspdots.git
+cd bspdots && chmod +x setup.sh
+./setup.sh
+```
+
+
+<img align="right" src="./assets/rice.png" width="400px">
 
 category        | value
 ---             | ---
