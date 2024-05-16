@@ -23,8 +23,6 @@ will install my dotfiles on your system
 and will result in losing all your configs. 
 Would you like to continue?
 
-P.S. Don't forget to add Arch and lib32 repos to download packages
-
 (1) yes
 (*) no
 
@@ -46,6 +44,17 @@ fi
 #
 
 sleep 3;
+su -c 'pacman -Syu --noconfirm'
+sleep 3; clear
+
+#
+# pacman.conf
+#
+
+sleep 3;
+su -c 'pacman -S artix-archlinux-support'
+su -c 'pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 3056513887B78AEB && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst''
+su -c 'cp -r ./misc/pacman.conf /etc/pacman.conf'
 su -c 'pacman -Syu --noconfirm'
 sleep 3; clear
 
