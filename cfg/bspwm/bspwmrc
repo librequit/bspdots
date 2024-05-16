@@ -12,17 +12,28 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
-# rules
+# Rules
 bspc rule -a Gimp desktop='^6' state=floating follow=on
 bspc rule -a Chromium desktop='^3'
 bspc rule -a nemo state=floating
 
 xsetroot -cursor_name left_ptr &
 
-# autostart
-xrdb merge .Xresources
-picom -b
+#####################
+#                   #
+# A U T O S T A R T #
+#                   #
+#####################
+
+# Monitors
+$HOME/.config/bspwm/scripts/monitor.sh
+
+# Keyboard
 setxkbmap -option grp:alt_shift_toggle us,ru
+
+# Appearance
 feh --bg-fill --no-fehbg ~/walls/wall.jpg
 $HOME/.config/polybar/launch.sh
+xrdb merge .Xresources
+picom -b
 dunst &
