@@ -1,7 +1,8 @@
 #!/bin/sh
 
-#xrandr --output "HDMI-0" --mode 1920x1080 --rate 75.00 --primary
-#xrandr --output "DP1" --mode 1920x1080 --left-of "HDMI-0"
+dbus-run-session pipewire &
+dbus-run-session pipewire-pulse & 
+dbus-run-session wireplumber &
 
 xrdb merge $HOME/.Xresources
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
