@@ -1,11 +1,11 @@
 <h1 align="center">Welcome to my DotFiles.</h1>
 ## Installation
+
 ```
 git clone https://github.com/librequit/bspdots.git
 cd bspdots && chmod +x setup.sh
 ./setup.sh
 ```
-
 
 <img align="right" src="./assets/rice.png" width="400px">
 
