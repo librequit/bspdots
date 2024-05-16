@@ -1,6 +1,8 @@
 # Welcome to my dotfiles
 <img align="right" src="./assets/rice.png" width="400px">
 
+# Installation
+
 category        | value
 ---             | ---
 Distro          | [Artix Linux](https://artixlinux.org/)
