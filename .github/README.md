@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to my DotFiles.</h1>
-## Installation
 
+## Installation
 ```
 git clone https://github.com/librequit/bspdots.git
 cd bspdots && chmod +x setup.sh
