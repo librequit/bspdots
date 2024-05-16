@@ -186,11 +186,13 @@ if [ -d ~/.config/bspwm ]; then
   rm -rf ~/.config/bspwm && mkdir -p ~/.config/bspwm;
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
   chmod +x ~/.config/bspwm/bspwmrc;
+  chmod +x ~/.config/bspwm/scripts/monitor.sh;
 else
   echo -e "$blue Installing bspwm configs... $rset"
   mkdir -p ~/.config/bspwm 
   cp -r ./cfg/bspwm/* ~/.config/bspwm/;
   chmod +x ~/.config/bspwm/bspwmrc;
+  chmod +x ~/.config/bspwm/scripts/monitor.sh;
 fi
 
 if [ -d ~/.config/lf ]; then
@@ -249,8 +251,16 @@ else
   chmod +x ~/.local/bin/*;
 fi
 
-echo -e "$blue Installing astronvim... $rset"
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+echo -e "$blue Installing NvChad... $rset"
+if [ -d ~/.local/nvim ]; then
+  echo -e "$ylo Neovim detected, deleting and copying NvChad... $rset"
+  rm -rf ~/.config/nvim && mkdir -p ~/.config/nvim;
+  cp -r ./cfg/nvim/* ~/.config/nvim/;
+else
+  echo -e "$blue Installing my NvChad... $rset"
+  mkdir -p ~/.config/nvim; 
+  cp -r ./cfg/nvim/* ~/.config/nvim/;
+fi
 
 echo -e "$grn Last step... $rset"
 cp -r ./home/.* ~/
