@@ -274,6 +274,9 @@ else
   cp -r ./cfg/nvim/* ~/.config/nvim/;
 fi
 
+echo -e "$blue Copying GTK config..."
+cp -r ./cfg/.gtkrc-2.0 ~/.config/.gtkrc-2.0
+
 echo -e "$grn Last step... $rset"
 cp -r ./home/.* ~/
 chmod +x ~/.ncmpcpp/ncmpcpp-ueberzug/*
