@@ -8,9 +8,6 @@ cd bspdots && chmod +x setup.sh
 ```
 
 <img align="right" src="./assets/asdpiofj.png" width="400px">
-
-<img align="right" src="./assets/rice.png" width="400px">
-
 category        | value
 ---             | ---
 Distro          | [Arch Linux](https://archlinux.org/)
@@ -28,6 +25,7 @@ Web Browser     | [Ungoogled Chromium](https://github.com/ungoogled-software/ung
 Image Viewer    | [nsxiv](https://github.com/nsxiv/nsxiv)
 Media Player    | [mpv](https://mpv.io/)
 Notifications   | [dunst](https://dunst-project.org/)
+<img align="right" src="./assets/rice.png" width="400px">
 
 # Credits and more..  
 - I am using [IosevkaTermSlab font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTermSlab.zip) and a custom font called [Iosevka Mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai).
