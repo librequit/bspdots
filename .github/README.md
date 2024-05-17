@@ -9,7 +9,7 @@ cd bspdots && chmod +x setup.sh
 ./setup.sh
 ```
 
-<img align="right" src="./assets/fetch.png" width="600px">
+<img align="right" src="./assets/fetch.png" width="525px">
 
 category        | value
 ---             | ---
