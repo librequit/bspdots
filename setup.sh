@@ -1,7 +1,7 @@
 #!/bin/env bash
-#-----------------------------------#
-# A r t i x  b s p w m  s c r i p t #
-#-----------------------------------#
+#---------------------------------#
+# A r c h  B S P W M  S c r i p t #
+#---------------------------------#
 
 #---------------#
 red='\033[1;31m'
@@ -18,7 +18,7 @@ blue='\033[1;34m'
 clear
 
 read -p "
-Hello $USER! This script is only for Artix and it 
+Hello $USER! This script is only for Arch and it 
 will install my dotfiles on your system
 and will result in losing all your configs. 
 Would you like to continue?
@@ -52,7 +52,6 @@ sleep 3; clear
 #
 
 sleep 3;
-su -c 'pacman -S artix-archlinux-support'
 su -c 'pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 3056513887B78AEB && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst''
 su -c 'cp -r ./misc/pacman.conf /etc/pacman.conf'
 su -c 'pacman -Syu --noconfirm'
