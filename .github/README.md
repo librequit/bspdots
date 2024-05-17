@@ -8,6 +8,7 @@ cd bspdots && chmod +x setup.sh
 ```
 
 <img align="right" src="./assets/asdpiofj.png" width="400px">
+
 category        | value
 ---             | ---
 Distro          | [Arch Linux](https://archlinux.org/)
