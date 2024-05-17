@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to my Dotfiles.</h1>
 
-![rice](./assets/asdfiopj.png)
+![rice](./assets/asdpiofj.png)
 
 ## Installation
 ```
