@@ -129,10 +129,12 @@ if [ -f ~/.config/polybar ]; then
   echo -e "$ylo Polybar config detected. Deleting it and copying new config... $rset"
   rm -rf ~/.config/polybar && mkdir -p ~/.config/polybar;
   cp ./cfg/polybar/* ~/.config/polybar/;
+  chmod +x ~/.config/polybar/launch.sh;
 else
   echo -e "$blue Copying polybar config file... $rset"
   mkdir -p ~/.config/polybar;
   cp ./cfg/polybar/* ~/.config/polybar/;
+  chmod +x ~/.config/polybar/launch.sh;
 fi
 
 echo -e "$blue Copying fonts... $rset"
