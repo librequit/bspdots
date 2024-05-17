@@ -11,7 +11,7 @@ cd bspdots && chmod +x setup.sh
 
 category        | value
 ---             | ---
-Distro          | [Artix Linux](https://artixlinux.org/)
+Distro          | [Arch Linux](https://archlinux.org/)
 Wallpaper       | [here](../misc/walls)
 Colorscheme     | [Catppuccin](https://github.com/catppuccin/catppuccin)
 Fonts           | [IosevkaTermSlab](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTermSlab.zip), [Iosevka Mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai)
