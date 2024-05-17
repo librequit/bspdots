@@ -67,8 +67,10 @@ if ! command -v yay &> /dev/null; then
     pushd /tmp/yay/
     makepkg -sric --noconfirm --needed PKGBUILD
     popd
+    yay --sudo doas --save
 else
     echo -e "\n(*) It seems that you already have yay installed, skipping..."
+    yay --sudo doas --save
 fi
 
 #
